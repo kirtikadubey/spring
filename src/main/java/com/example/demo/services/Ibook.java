@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface Ibook {
-    public Optional<Book> searchBookByIsb(long Isbn);
+    public Optional<Book> searchBookByIsb(int Isbn);
     public Optional<Book> searchBookByName(String name);
     public void saveBook(Book bk);
 

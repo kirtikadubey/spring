@@ -16,8 +16,8 @@ public class StudentService implements IStudent {
     @Autowired
     StuRepo stuRepo;
 
-    public Optional searchStudentByRoll(long roll){
-     return stuRepo.findById(roll);
+    public Optional searchStudentByRoll(int roll){
+        return stuRepo.findByRoll(roll);
         //return null;
     }
     public Optional searchStudentByName(String name){

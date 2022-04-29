@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -18,7 +19,8 @@ public class Book {
     private int isbn;
     private String bookName;
     private String available;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "stu_id")//, referencedColumnName = "id")
     private Student student;
 
 }

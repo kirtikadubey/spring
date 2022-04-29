@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Repository
 public interface BookRepo extends JpaRepository<Book,Long> {
-    public Optional<Book> findByIsbn(long isbn);
+    public Optional<Book> findByIsbn(int isbn);
     public Optional<Book> findByBookName(String name);
 //    @Query("SELECT *from student ")
 //    public BookBorrowed getJoinInformation();

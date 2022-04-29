@@ -16,27 +16,6 @@ import java.util.Optional;
 public class StuController {
     @Autowired
     IStudent studentService;
-    @Autowired
-    Ibook bookService;
-
-/**serach book by isbn***/
-    @RequestMapping(value = "book/{Isbn}",method= RequestMethod.GET)
-    public Book BookDetailsByIsbn(@PathVariable Integer Isbn){
-         return bookService.searchBookByIsb(Isbn).get();
-
-    }
-
-    /**serach book by Name***/
-    @RequestMapping(value = "book",method= RequestMethod.GET)
-    public Book bookDetailsByName(@RequestParam (value="name") String name){
-        return bookService.searchBookByName(name).get();
-    }
-
-
-    @RequestMapping(value = "book",method= RequestMethod.POST)
-    public void saveBook(@RequestBody Book bk){
-        bookService.saveBook(bk);
-    }
 
     @RequestMapping(value = "stu",method = RequestMethod.POST)
     public  void saveStuDetails(@RequestBody Student stu){
@@ -50,19 +29,18 @@ public class StuController {
     }
 
     @RequestMapping(value ="stu/{roll}",method = RequestMethod.GET)
-    public Student stuDetailsBYRoll(@PathVariable long roll){
+    public Student stuDetailsBYRoll(@PathVariable int roll){
         Optional<Student> opt= studentService.searchStudentByRoll(roll);
         return opt.get();
     }
-
-    @RequestMapping(value ="stu/books",method = RequestMethod.GET)
-    public List<BookBorrowed> stuDetailsBYRoll(){
+        @RequestMapping(value ="stu/books",method = RequestMethod.GET)
+    public List<BookBorrowed> joinDetails(){
         return studentService.joinInfo();
     }
 
     @GetMapping("stu/filter/{name}")
     public Student filter(@PathVariable String name){
+
         return studentService.filter(name);
     }
-
 }

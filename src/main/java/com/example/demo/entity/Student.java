@@ -3,6 +3,7 @@ package com.example.demo.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
@@ -18,7 +19,6 @@ public class Student {
     private int roll;
     private String name;
     private String className;
-    @OneToMany(targetEntity = Book.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "st_bks",referencedColumnName = "id")
+    @OneToMany(mappedBy = "student",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private List<Book> books;
 }

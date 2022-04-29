@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface IStudent {
 
     public Optional searchStudentByName(String name);
-    public Optional searchStudentByRoll(long roll);
+    public Optional searchStudentByRoll(int roll);
     public void saveStudent(Student stu);
     List<BookBorrowed> joinInfo();
 

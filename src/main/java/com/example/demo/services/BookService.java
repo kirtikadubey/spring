@@ -21,7 +21,7 @@ public class BookService implements Ibook {
 
     }
     @Override
-    public Optional<Book> searchBookByIsb(long Isbn){
+    public Optional<Book> searchBookByIsb(int Isbn){
         return bookRepo.findByIsbn(Isbn);
         //return null;
     }

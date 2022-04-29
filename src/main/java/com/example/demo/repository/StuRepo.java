@@ -13,6 +13,7 @@ import java.util.Optional;
 public interface StuRepo extends JpaRepository<Student,Long>{
 
     public Optional<Student> findByName(String name);
+    Optional<Student> findByRoll(int roll);
     @Query("SELECT new com.example.demo.dto.BookBorrowed(s.name, b.bookName) FROM Student s JOIN s.books b")
     public List<BookBorrowed> getJoinInformation();
     @Query(value = "select * from Student s where s.name = :studentName", nativeQuery = true)
