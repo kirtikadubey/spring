@@ -30,7 +30,7 @@ public class StudentService implements IStudent {
     }
     @Override
     public List<BookBorrowed> joinInfo(){
-        return stuRepo.getJoinInformation();
+        return stuRepo.findByStudent_BookBorrowed();
     }
 
     @Override

@@ -3,14 +3,13 @@ package com.example.demo.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-@Component
-public class BookBorrowed {
-    private String name;
+@AllArgsConstructor
+public class BookAuthors {
     private String bookName;
-
+    private List<String> authors;
 }

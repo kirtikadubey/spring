@@ -11,7 +11,7 @@ public interface IStudent {
     public Optional searchStudentByName(String name);
     public Optional searchStudentByRoll(int roll);
     public void saveStudent(Student stu);
-    List<BookBorrowed> joinInfo();
+    public List<BookBorrowed> joinInfo();
 
     Student filter(String name);
 }

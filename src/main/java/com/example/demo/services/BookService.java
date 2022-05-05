@@ -1,7 +1,7 @@
 package com.example.demo.services;
 
 
-import com.example.demo.dto.BookBorrowed;
+import com.example.demo.entity.Author;
 import com.example.demo.entity.Book;
 import com.example.demo.repository.BookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +29,11 @@ public class BookService implements Ibook {
     public Optional<Book> searchBookByName(String Name){
         return bookRepo.findByBookName(Name);
         //return null;
+    }
+    @Override
+    public List<Author>getAuthorsDeatilsByBookName(String name){
+        return bookRepo.authsByBookName(name);
+
     }
 
 }
