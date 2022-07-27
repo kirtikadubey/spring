@@ -12,4 +12,5 @@ public interface Ibook {
     public Optional<Book> searchBookByName(String name);
     public void saveBook(Book bk);
     public List<Author>getAuthorsDeatilsByBookName(String name);
+    public void deleteBookbyId(long id);
 }

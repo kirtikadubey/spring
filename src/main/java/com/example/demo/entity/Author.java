@@ -20,7 +20,7 @@ public class Author{
 //    @JoinColumn(name= "author_id")
     @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JoinTable(name = "author_book",
-            joinColumns=@JoinColumn(name= "book_id"),
-            inverseJoinColumns = @JoinColumn(name="author_id"))
+            joinColumns=@JoinColumn(name= "author_id"),
+            inverseJoinColumns = @JoinColumn(name="book_id"))
     List<Book> books;
 }

@@ -36,4 +36,11 @@ public class BookService implements Ibook {
 
     }
 
+    @Override
+    public void deleteBookbyId(long id) {
+
+         bookRepo.deleteById(id);
+
+    }
+
 }
